@@ -1,11 +1,21 @@
-const express=require('express');
+const express= require('express');
 const app=express();
-const port=3000;        
-const path=require('path');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
-const flash = require('connect-flash'); 
+const bodyparser=require('body-parser');
+const router = require('./route/auth');
+const cors=require('cors');
+
+app.use(bodyparser.urlencoded({extended:false}));
+app.use(bodyparser.json())
+app.use('/',router);
+
+app.use(cors({
+    origin:'http://localhost:3000',
+    methods:['GET','POST','DELETE','PUT','PATCH'],
+    Credentials:true
+}))
 
 
+
+app.listen(500,()=>{
+    console.log("server started at");
+})
