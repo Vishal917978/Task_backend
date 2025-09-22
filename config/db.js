@@ -2,7 +2,7 @@ const mysql=require('mysql2');
 let conn=mysql.createConnection({
     user:'root',
     host:'localhost',
-    password:'root',
+    password:'yourpassword',
     database:'task',
 },(res,err)=>{
     if(err){
