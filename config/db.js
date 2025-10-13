@@ -1,7 +1,7 @@
 const mysql=require('mysql2');
 let conn=mysql.createConnection({
-    user:'root',
     host:'localhost',
+    user:'root',
     password:'yourpassword',
     database:'task',
 },(res,err)=>{
