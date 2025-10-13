@@ -1,6 +1,7 @@
 const mysql = require('../config/db');
 const util = require('util');
 const jwt = require('jsonwebtoken');
+const bcrypt=require('bcrypt')
 const query1 = util.promisify(mysql.query).bind(mysql);
 
 const registration = async (req, res) => {
